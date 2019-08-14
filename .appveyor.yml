@@ -1,0 +1,6 @@
+build_script:
+  - mkdir -p deploy
+  - source ./.compile_binaries
+  - ./striptests
+  - set -ex; build_"$BUILD"; set +x;
+  - ./.prepare_deploy
