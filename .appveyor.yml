@@ -1,6 +1,8 @@
+image: Windows Server 2019
+
 build_script:
-  - sh: mkdir -p deploy
-  - sh: source ./.compile_binaries
-  - sh: ./striptests
-  - sh: set -ex; build_"$BUILD"; set +x;
-  - sh: ./.prepare_deploy
+  - ps: mkdir -p deploy
+  - ps: source ./.compile_binaries
+  - ps: ./striptests
+  - ps: set -ex; build_"$BUILD"; set +x;
+  - ps: ./.prepare_deploy
