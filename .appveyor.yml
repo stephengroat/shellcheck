@@ -1,8 +1,5 @@
 image: Windows Server 2019
 
 build_script:
-  - ps: mkdir -p deploy
-  - ps: source ./.compile_binaries
-  - ps: ./striptests
-  - ps: set -ex; build_"$BUILD"; set +x;
-  - ps: ./.prepare_deploy
+  - wslconfig /setdefault ubuntu
+  - wsl mkdir -p deploy && source ./.compile_binaries && ./striptests && set -ex; build_"$BUILD"; set +x; && ./.prepare_deploy
