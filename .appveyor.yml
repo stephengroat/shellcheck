@@ -4,5 +4,5 @@ build_script:
   - wsl mkdir -p deploy
   - wsl source ./.compile_binaries 
   - wsl ./striptests 
-  - wsl set -ex; build_"$BUILD"; set +x;
+  - wsl set -ex; build_windows; set +x;
   - wsl ./.prepare_deploy
